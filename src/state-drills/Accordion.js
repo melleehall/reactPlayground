@@ -7,7 +7,7 @@ export default class Accordion extends React.Component {
     }
 
     state = {
-        currentViewIndex: 0,
+        currentViewIndex: null,
     }
 
     handleButtonClick(index) {
@@ -21,26 +21,17 @@ export default class Accordion extends React.Component {
                     type='button'
                     onClick={() => this.handleButtonClick(index)}
                 >
-                    {this.props.sections[index]['title']}
+                    {section.title}
                 </button>
+                {(this.state.currentViewIndex === index) && <p>{section.content}</p>}
             </li>
         ))
       }
-
-    renderContent() {
-        const currentContent = this.props.sections[this.state.currentViewIndex]
-        return (
-            <p className='Accordion__item'>
-                {currentContent.content}
-            </p>
-        )
-    }
 
     render () {
         return (
             <ul className='Accordion'>
                 {this.renderButtons()}
-                {!!this.props.sections.length && this.renderContent()}
             </ul>
         )
     }
