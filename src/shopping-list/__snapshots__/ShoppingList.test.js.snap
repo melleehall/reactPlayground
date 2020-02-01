@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShoppingList componenet renders ShoppingItems when supplied with an items prop 1`] = `
+<ul>
+  <ShoppingItem
+    item={0}
+    key="0"
+  />
+  <ShoppingItem
+    item={1}
+    key="1"
+  />
+  <ShoppingItem
+    item={2}
+    key="2"
+  />
+</ul>
+`;
+
+exports[`ShoppingList componenet renders empty given no items 1`] = `<ul />`;
